@@ -1,0 +1,5 @@
+A new feedback is submitted. Feedback details are below:
+
+<b>Sender:</b> <%= @sender %>
+
+<%= @content %>

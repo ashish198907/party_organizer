@@ -1,0 +1,23 @@
+<p>
+  <b>Name:</b>
+  <%=h @user.name %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%=h @user.email %>
+</p>
+
+<p>
+  <b>Mobile:</b>
+  <%=h @user.mobile %>
+</p>
+
+<p>
+  <b>Attending:</b>
+  <%=h @user.attending %>
+</p>
+
+
+<%= link_to_if @user.last_login_ip == request.remote_ip, 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>

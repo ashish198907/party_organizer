@@ -1,0 +1,39 @@
+<div style="padding:10px;">
+  <h3>Send Email Notifications</h3>
+  <% form_tag admin_send_notification_path do %>
+      <div>
+        <b>Subject :</b>
+        <%= text_field_tag :subject,"",:placeholder => "Mail Subject",:style=>"width : 300px;"%>
+      </div>
+      <br>
+      <div>
+        <b>Recipients :</b>
+        <%= radio_button_tag :notify_users,"selected",true %><%= label_tag :notify_users,"Current Event Users" %>
+        <%= radio_button_tag :notify_users,"all",false %><%= label_tag :notify_users,"All Users (includes all previous event users)" %>
+      </div>
+      <br>
+      <div>
+        <%= text_area_tag :content,"",:placeholder => "Enter your mail content here!",:style=>"width : 90%;height: 280px;resize:none;border: 1px solid grey;" %>
+      </div>
+      <br>
+      <div>
+        <%=  submit_tag "Send",:id => "send_notification"%>
+        <%=  submit_tag "Cancel",:id => "cancel_notification" %>
+      </div>
+  <% end %>
+</div>
+
+<script>
+
+    $('#send_notification').click(function(e){
+        if($("#subject").val().trim() == "" || $("#content").val().trim() == ""){
+            alert("Subject and Content can't be blank!");
+            e.preventDefault();
+        }
+    })
+
+    $('#cancel_notification').click(function(e){
+        $("#subject,#content").val("");
+        e.preventDefault();
+    })
+</script>

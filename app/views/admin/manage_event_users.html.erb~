@@ -1,0 +1,46 @@
+<table class="display_users" cellpadding="4" cellspacing="4">
+  <tr>
+    <th>S.No.</th>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Mobile</th>
+    <th>Attending</th>
+    <th>Registration</th>
+    <th>Actions</th>
+  </tr>
+
+  <% if !@event_users.blank? %>
+      <% @event_users.each_with_index do |user,index| %>
+          <tr id="user_row_<%= user.id %>">
+            <td><%= index+1 %></td>
+            <td><%=h user.name %></td>
+            <td><%=h user.email %></td>
+            <td class="text_align_center"><%=h user.mobile %></td>
+            <td class="text_align_center"><%=h user.attending ? "Attending" : "Not Attending"  %></td>
+            <td class="text_align_center"><%=h distance_of_time_in_words_to_now(user.created_at) %> ago</td>
+            <td class="text_align_center"><%= link_to_function 'Delete', "delete_user('#{user.id}')" %></td>
+          </tr>
+      <% end %>
+  <% else %>
+      <tr>
+        <td colspan=6 class="text_align_center"> No Registrations </td>
+      </tr>
+
+  <% end %>
+</table>
+
+<br>
+<script>
+    function delete_user(user_id) {
+        if(confirm("Are you sure, you want to delete this user?")){
+            $.ajax({
+                url: "<%= admin_delete_user_path %>" ,
+                method: 'post',
+                data: 'id=' + user_id,
+                success: function(data) {
+                    $('#user_row_' + user_id).fadeOut(1000);
+                }
+            });
+        }
+    }
+</script>

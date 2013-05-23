@@ -1,0 +1,28 @@
+<div style="padding:10px;">
+<h3 style="margin:0;">Update your details</h3>
+
+<% form_for(@user) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name, "Full Name" %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </p>
+  <p>
+    <%= f.label :mobile %><br />
+    <%= f.text_field :mobile,:maxlength => "10",:size => "30" %>
+  </p>
+  <p>
+    <%= f.check_box :attending %> <%= f.label :attending %>
+  </p>
+  <p class="flt-lt">
+    <%= f.submit 'Update',:class => "buttons" %> 
+  </p>
+<% end %>
+<%= button_to 'Cancel', home_url,:class=> "buttons flt-lt", :style=>"margin: 14px 0 0 15px;" %>
+</div>
+

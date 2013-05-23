@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/html" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>Fresher's Party</title>
+  <%= stylesheet_link_tag :all %>
+  <%= javascript_include_tag :all %>
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.4.4.min.js"></script>
+</head>
+<body>
+<div class="header_div">
+  <%= link_to image_tag("fp.png", :class=>"header_logo flt-lt"),home_url %>
+  <div class="event_details_div flt-rt">
+    <% if @current_event.present? %>
+        <table width= "70%" class="flt-lt">
+            <tr>
+                <td width= "30%"><b>Event:</b></td>
+                <td><%= @current_event.title %></td>
+            </tr>
+            <tr>
+                <td><b>Venue:</b></td>
+                <td><%= @current_event.venue %></td>
+            </tr>
+            <tr>
+                <td><b>Date:</b></td>
+                <td><%= @current_event.date %></td>
+            </tr>
+            <tr>
+                <td><b>Time:</b></td>
+                <td><%= @current_event.time %></td>
+            </tr>
+        </table>
+    <% else %>
+        <div style="padding: 35px;" class="flt-lt"><b>No Upcoming Event.</b></div>
+    <% end %>
+    <%= link_to image_tag("feedback_bottom.gif"),show_feed_back_form_path,:class => "flt-rt" %>
+  </div>
+</div>
+<div class="main_wrapper">
+<p style="color: green" class="flt-lt"><%= notice %></p>
+<p style="color: red" class="flt-lt"><%= flash[:error] %></p>
+
+<%= yield %>
+
+</div>
+<div class="footer_text text_align_center">
+  &copy 2012-13 All rights reserved. ( ROR  Team)
+</div>
+</body>
+</html>

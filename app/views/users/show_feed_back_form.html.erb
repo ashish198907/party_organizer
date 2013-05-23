@@ -1,0 +1,38 @@
+<div style="padding:10px;">
+  <h3>Send Suggestions/Feedback </h3>
+  <% form_tag submit_feed_back_form_path do %>
+      <div>
+        <b>Subject :</b>
+        <%= text_field_tag :subject,"",:placeholder => "Mail Subject",:style=>"width : 300px;"%>
+      </div>
+      <br>
+      <div>
+        <b>Email :</b>
+        <%= text_field_tag :sender,"",:placeholder => "Your Email Address",:style=>"width : 300px;"%>
+      </div>
+      <br>
+      <div>
+        <%= text_area_tag :content,"",:placeholder => "Enter your feedback or suggestion here!",:style=>"width : 90%;height: 280px;resize:none;border: 1px solid grey;" %>
+      </div>
+      <br>
+      <div>
+        <%=  submit_tag "Send",:id => "send_feedback"%>
+        <%=  submit_tag "Clear",:id => "cancel_feedback" %>
+      </div>
+  <% end %>
+</div>
+
+<script>
+
+    $('#send_feedback').click(function(e){
+        if($("#subject").val().trim() == "" || $("#sender").val().trim() == "" || $("#content").val().trim() == ""){
+            alert("Subject, Email and Content are mandatory.");
+            e.preventDefault();
+        }
+    })
+
+    $('#cancel_feedback').click(function(e){
+        $("#subject,#sender,#content").val("");
+        e.preventDefault();
+    })
+</script>

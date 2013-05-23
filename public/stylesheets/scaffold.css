@@ -1,0 +1,122 @@
+body { background-color: #fff; color: #333; }
+
+body, p, ol, ul, td {
+  font-family: arial,verdana, helvetica, sans-serif;
+  font-size:   12px;
+  line-height: 18px;
+}
+
+body{ background:url("/images/bg.png") repeat;}
+
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+a { color: #000; text-decoration:underline; }
+a:hover { color: #B686BB; text-decoration:none;}
+
+.fieldWithErrors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+#errorExplanation {
+  width: 400px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+
+#errorExplanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  background-color: #c00;
+  color: #fff;
+}
+
+#errorExplanation p {
+  color: #333;
+  margin-bottom: 0;
+  padding: 5px;
+}
+
+#errorExplanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+.main_wrapper {
+    margin: 0 auto;
+    width: 800px;
+    min-height: 400px;
+    border: 1px solid #CCC;
+    padding: 5px;
+    background-color: #F1F0F5;
+}
+
+
+.text_align_center {
+    text-align: center !important;
+}
+
+.display_users{
+    width: 100% !important;
+    background-color: #D6E8BB;
+}
+
+.display_users tr th {
+    background-color: #B686BB;
+    color: white;
+}
+
+.flt-rt{
+    float: right !important;
+}
+
+.flt-lt{
+    float: left !important;
+}
+.footer_text{
+    margin: 0 auto;
+    width: 800px;
+    padding: 5px;
+    font-weight: bold;
+    color: blueViolet;
+}
+
+.header_div {
+    margin: 0 auto;
+    width: 800px;
+    padding: 5px;
+    background-color: #F1F0F5;
+    margin-bottom: 1px;
+    min-height: 90px;
+    border: 1px solid #CCC;
+}
+
+.header_logo {
+    height: 85px;
+}
+
+.event_details_div {
+    width: 45%;
+    height: auto;
+}
+
+.event_details_heading {
+    margin: 0;
+}
+.buttons {
+    background-color: #B686BB;
+    color: white;
+    border:none;
+    font-weight:bold;
+    padding: 5px 10px;
+}

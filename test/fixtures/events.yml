@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  title: MyString
+  date: MyString
+  time: MyString
+  venue: MyString
+  visible: false
+
+two:
+  title: MyString
+  date: MyString
+  time: MyString
+  venue: MyString
+  visible: false

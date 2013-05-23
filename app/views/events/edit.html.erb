@@ -1,0 +1,13 @@
+<div style="padding:10px;">
+  <h3 style="margin:0;">Update event details</h3>
+
+  <% form_for(@event) do |f| %>
+      <%= render :partial => "form", :locals => { :f => f } %>
+      <p class="flt-lt">
+        <%= f.submit 'Update',:class => "buttons" %>
+      </p>
+  <% end %>
+  <%= link_to 'Cancel', events_url,:class=> "flt-lt", :style=>"padding:4px 10px;margin: 14px 0 0 15px" %>
+</div>
+
+
